@@ -4,6 +4,16 @@ import pygame
 from pygame import mixer
 
 
+"""In this code I added a:
+-Clock
+-Death Border
+-Modified All assets
+-Change in the death zone
+-bullet velocity + Hitbox, key input ("LSHIFT" to shoot, "a" to move left, "d" to go right), Enemy amount + Hitbox, Bullet start position, Enemy Movement speed (delta x and y)
+-Scale added to all images, rather than using a premade size
+
+"""
+
 
 pygame.init() #Starts up the pygame engine
 
@@ -29,6 +39,8 @@ crystalY = []
 crystalX_delta = []
 crystalY_delta = []
 ENEMY_AMOUNT = 5 #Self explanatory, amount of enemies on screen
+
+
 
 
 
@@ -59,7 +71,7 @@ projectile_state = "prepped" #The vixeo creats bullets in two stateas, one which
 current_points = 0 #The current points to be displayed pn the screen
 font = pygame.font.Font('freesansbold.ttf', 32) #This font seems to work so i kept it here.
 
-BORDER = pygame.Rect(0, 340, 800, 10)   
+BORDER = pygame.Rect(0, 340, 800, 10)  #This clarifies the death sone of a player
 
 
 wordsX = 10  #The x and y posituoins of the wrods
@@ -171,5 +183,5 @@ while playing:
 
     hand(handX, handY) #Hand is placed in an x and y position
     show_score(wordsX, wordsY) #Score is showed on this x and y positio 
-    pygame.draw.rect(screen, (0,0,0), BORDER)
+    pygame.draw.rect(screen, (0,0,0), BORDER) #Draws the death border
     pygame.display.update()
